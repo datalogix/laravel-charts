@@ -79,7 +79,7 @@ class ChartsServiceProvider extends ServiceProvider
             });
 
         Blade::directive('chart', function ($expression) use ($namePrefix) {
-            return "<?php echo route('{$namePrefix}'{$expression}); ?>";
+            return "<?php echo route('{$namePrefix}'.{$expression}); ?>";
         });
     }
 

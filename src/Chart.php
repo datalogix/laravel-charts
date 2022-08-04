@@ -87,7 +87,7 @@ class Chart implements Arrayable, Jsonable, Responsable
         $this->datasets[$name] = [
             'name' => $name,
             'values' => $values,
-            'extra' => $extra
+            'extra' => $extra,
         ];
 
         return $this;

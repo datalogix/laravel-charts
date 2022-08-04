@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/datalogix/laravel-charts/version)](https://packagist.org/packages/datalogix/laravel-charts)
 [![Total Downloads](https://poser.pugx.org/datalogix/laravel-charts/downloads)](https://packagist.org/packages/datalogix/laravel-charts)
 [![tests](https://github.com/datalogix/laravel-charts/workflows/tests/badge.svg)](https://github.com/datalogix/laravel-charts/actions)
-[![StyleCI](https://github.styleci.io/repos/316761194/shield?style=flat)](https://github.styleci.io/repos/316761194)
+[![StyleCI](https://github.styleci.io/repos/521346347/shield?style=flat)](https://github.styleci.io/repos/521346347)
 [![codecov](https://codecov.io/gh/datalogix/laravel-charts/branch/main/graph/badge.svg)](https://codecov.io/gh/datalogix/laravel-charts)
 [![License](https://poser.pugx.org/datalogix/laravel-charts/license)](https://packagist.org/packages/datalogix/laravel-charts)
 

@@ -37,7 +37,7 @@ class Chart implements Arrayable, Jsonable, Responsable
     /**
      * Sets the chart labels.
      *
-     * @param string[] $labels
+     * @param  string[]  $labels
      * @return \Datalogix\Charts\Chart
      */
     public function labels(array $labels)
@@ -50,7 +50,7 @@ class Chart implements Arrayable, Jsonable, Responsable
     /**
      * Adds extra information to the chart.
      *
-     * @param array $extra
+     * @param  array  $extra
      * @return \Datalogix\Charts\Chart
      */
     public function extra(array $extra)
@@ -64,8 +64,8 @@ class Chart implements Arrayable, Jsonable, Responsable
      * Dataset adds a new simple dataset to the chart. If more advanced control is
      * needed, consider using `AdvancedDataset` instead.
      *
-     * @param string $name
-     * @param array $values
+     * @param  string  $name
+     * @param  array  $values
      * @return \Datalogix\Charts\Chart
      */
     public function dataset($name, $values)
@@ -77,9 +77,9 @@ class Chart implements Arrayable, Jsonable, Responsable
      * AdvancedDataset appends a new dataset to the chart or modifies an existing one.
      * If the ID has already been used, the dataset will be replaced with this one.
      *
-     * @param string $name
-     * @param array $values
-     * @param array|null $extra
+     * @param  string  $name
+     * @param  array  $values
+     * @param  array|null  $extra
      * @return \Datalogix\Charts\Chart
      */
     public function advancedDataset($name, $values, $extra = null)
@@ -103,9 +103,9 @@ class Chart implements Arrayable, Jsonable, Responsable
         return [
             'chart' => [
                 'labels' => $this->labels,
-                'extra' => $this->extra
+                'extra' => $this->extra,
             ],
-            'datasets' => array_values($this->datasets)
+            'datasets' => array_values($this->datasets),
         ];
     }
 

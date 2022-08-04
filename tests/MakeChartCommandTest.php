@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\File;
 
 class MakeChartCommandTest extends TestCase
 {
-    function testCreateNewChartClass()
+    public function testCreateNewChartClass()
     {
         $sampleChartClasss = charts_path('SampleChart.php');
 

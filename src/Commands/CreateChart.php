@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class CreateChart extends GeneratorCommand
 {
-   /**
+    /**
      * The name and signature of the console command.
      *
      * @var string

@@ -11,7 +11,7 @@ class Registrar
     /**
      * Registers new charts into the application.
      *
-     * @param array $charts
+     * @param  array  $charts
      * @return void
      */
     public function register(array $charts)
@@ -27,7 +27,7 @@ class Registrar
         Route::group([
             'prefix' => config('charts.prefix', 'api/chart'),
             'middleware' => config('charts.middleware', ['web']),
-            'as' => $namePrefix ? $namePrefix.'.' : $namePrefix
+            'as' => $namePrefix ? $namePrefix.'.' : $namePrefix,
         ], function () use ($charts, $namespace) {
             foreach ($charts as $chartClass) {
                 $className = Str::of($chartClass)->after($namespace);

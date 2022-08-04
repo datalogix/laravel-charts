@@ -1,0 +1,25 @@
+<?php
+
+namespace DummyNamespace;
+
+use Datalogix\Charts\Chart;
+use Datalogix\Charts\BaseChart;
+use Datalogix\Charts\Contracts\Chartable;
+use Illuminate\Http\Request;
+
+class DummyClass extends BaseChart implements Chartable
+{
+    /**
+     * Handles the HTTP request of the chart.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Datalogix\Charts\Chart
+     */
+    public function handler(Request $request)
+    {
+        return Chart::build()
+            ->labels(['First', 'Second', 'Third'])
+            ->dataset('Sample', [1, 2, 3])
+            ->dataset('Sample 2', [3, 2, 1]);
+    }
+}

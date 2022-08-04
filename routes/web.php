@@ -2,8 +2,10 @@
 
 use Composer\Autoload\ClassMapGenerator;
 use Datalogix\Charts\Registrar;
+use Illuminate\Support\Facades\File;
 
-$path = app_path(config('charts.namespace', 'Charts'));
-$charts = array_keys(ClassMapGenerator::createMap($path));
+if (File::isDirectory($path = charts_path())) {
+    $charts = array_keys(ClassMapGenerator::createMap($path));
 
-app(Registrar::class)->register($charts);
+    app(Registrar::class)->register($charts);
+}

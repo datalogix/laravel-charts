@@ -18,7 +18,10 @@ class Registrar
     {
         $namePrefix = Str::of(config('charts.name_prefix', 'charts'))
             ->snake('.')
-            ->trim('.');
+            ->trim('.')
+            ->whenNotEmpty(function ($value) {
+                return $value->append('.');
+            });
 
         $namespace = Str::of(app()->getNamespace())
             ->trim('\\')
@@ -27,7 +30,7 @@ class Registrar
         Route::group([
             'prefix' => config('charts.prefix', 'api/chart'),
             'middleware' => config('charts.middleware', ['web']),
-            'as' => $namePrefix ? $namePrefix.'.' : $namePrefix,
+            'as' => $namePrefix,
         ], function () use ($charts, $namespace) {
             foreach ($charts as $chartClass) {
                 $className = Str::of($chartClass)->after($namespace);

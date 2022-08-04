@@ -73,13 +73,10 @@ class ChartsServiceProvider extends ServiceProvider
     {
         $namePrefix = Str::of(config('charts.name_prefix', 'charts'))
             ->snake('.')
-            ->trim('.')
-            ->whenNotEmpty(function ($value) {
-                return $value->append('.');
-            });
+            ->trim('.');
 
         Blade::directive('chart', function ($expression) use ($namePrefix) {
-            return "<?php echo route('{$namePrefix}'{$expression}); ?>";
+            return "<?php echo route(('{$namePrefix}' ? '{$namePrefix}.' : '').{$expression}); ?>";
         });
     }
 
